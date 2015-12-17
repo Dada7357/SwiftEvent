@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F5268851C22959C00F9F530 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5268831C22959C00F9F530 /* Event.swift */; };
+		0F5268861C22959C00F9F530 /* UIControlEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5268841C22959C00F9F530 /* UIControlEvents.swift */; };
 		0F7D18CA1C22921500F56BC6 /* SwiftEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F7D18C91C22921500F56BC6 /* SwiftEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F7D18D11C22921500F56BC6 /* SwiftEvent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F7D18C61C22921500F56BC6 /* SwiftEvent.framework */; };
 		0F7D18D61C22921500F56BC6 /* SwiftEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D18D51C22921500F56BC6 /* SwiftEventTests.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F5268831C22959C00F9F530 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0F5268841C22959C00F9F530 /* UIControlEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlEvents.swift; sourceTree = "<group>"; };
 		0F7D18C61C22921500F56BC6 /* SwiftEvent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftEvent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7D18C91C22921500F56BC6 /* SwiftEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftEvent.h; sourceTree = "<group>"; };
 		0F7D18CB1C22921500F56BC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 		0F7D18C81C22921500F56BC6 /* SwiftEvent */ = {
 			isa = PBXGroup;
 			children = (
+				0F5268831C22959C00F9F530 /* Event.swift */,
+				0F5268841C22959C00F9F530 /* UIControlEvents.swift */,
 				0F7D18C91C22921500F56BC6 /* SwiftEvent.h */,
 				0F7D18CB1C22921500F56BC6 /* Info.plist */,
 			);
@@ -194,6 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F5268861C22959C00F9F530 /* UIControlEvents.swift in Sources */,
+				0F5268851C22959C00F9F530 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +316,7 @@
 		0F7D18DB1C22921500F56BC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +327,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZFChina.SwiftEvent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		0F7D18DC1C22921500F56BC6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -376,6 +387,7 @@
 				0F7D18DC1C22921500F56BC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F7D18DD1C22921500F56BC6 /* Build configuration list for PBXNativeTarget "SwiftEventTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +396,7 @@
 				0F7D18DF1C22921500F56BC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
