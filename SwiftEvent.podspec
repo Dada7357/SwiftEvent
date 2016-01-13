@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/SwiftEvent.git", :tag => "1.0.1" }
+  s.source       = { :git => "https://github.com/dada7357/SwiftEvent.git", :tag => "1.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -92,9 +92,9 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "SwiftEvent/**/*.{h,swift}"
-  #  s.exclude_files = "Classes/Exclude"
+  s.exclude_files = "SwiftEventTest/**/*.*"
 
-  # s.public_header_files = "Classes/**/*.h"
+  s.public_header_files = "SwiftEvent/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
