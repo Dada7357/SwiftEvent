@@ -1,0 +1,635 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3AE1B8F3-60E8-4CB2-A5CF-DE931E75BA56}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SvgWeb</RootNamespace>
+    <AssemblyName>SvgWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ext.Net">
+      <HintPath>..\lib\Ext.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net.Utilities">
+      <HintPath>..\lib\Ext.Net.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net.UX">
+      <HintPath>..\lib\Ext.Net.UX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.0.8.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Transformer.NET">
+      <HintPath>..\lib\Transformer.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\diagrameditor.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="config\keyhandler-commons.xml" />
+    <Content Include="css\common.css" />
+    <Content Include="css\explorer.css" />
+    <Content Include="css\ext-all.css" />
+    <Content Include="css\images\bg.gif" />
+    <Content Include="css\images\cmp-bg.gif" />
+    <Content Include="css\workfow.css" />
+    <Content Include="ExtDemo.aspx" />
+    <Content Include="helloport.aspx" />
+    <Content Include="js\GraphControl.js" />
+    <Content Include="js\layout.js" />
+    <Content Include="js\layout_old.js" />
+    <Content Include="mxgraphDemo.aspx" />
+    <Content Include="mxgraph\debug\js\mxClient.js" />
+    <Content Include="mxgraph\examples\codec.html" />
+    <Content Include="mxgraph\examples\contexticons.html" />
+    <Content Include="mxgraph\examples\control.html" />
+    <Content Include="mxgraph\examples\dbeditor.html" />
+    <Content Include="mxgraph\examples\dragsource.html" />
+    <Content Include="mxgraph\examples\dynamicloading.html" />
+    <Content Include="mxgraph\examples\dynamicstyle.html" />
+    <Content Include="mxgraph\examples\dynamictoolbar.html" />
+    <Content Include="mxgraph\examples\edgetolerance.html" />
+    <Content Include="mxgraph\examples\editing.html" />
+    <Content Include="mxgraph\examples\editors\archive\grapheditor\css\grapheditor.css" />
+    <Content Include="mxgraph\examples\editors\archive\grapheditor\grapheditor.html" />
+    <Content Include="mxgraph\examples\editors\archive\grapheditor\js\DiagramPanel.js" />
+    <Content Include="mxgraph\examples\editors\archive\grapheditor\js\DiagramStore.js" />
+    <Content Include="mxgraph\examples\editors\archive\grapheditor\js\GraphEditor.js" />
+    <Content Include="mxgraph\examples\editors\archive\grapheditor\js\LibraryPanel.js" />
+    <Content Include="mxgraph\examples\editors\archive\grapheditor\js\MainPanel.js" />
+    <Content Include="mxgraph\examples\editors\archive\grapheditor\resources\basic-style.xml" />
+    <Content Include="mxgraph\examples\editors\archive\grapheditor\resources\default-style.xml" />
+    <Content Include="mxgraph\examples\editors\config\diagrameditor.xml" />
+    <Content Include="mxgraph\examples\editors\config\editor-commons.xml" />
+    <Content Include="mxgraph\examples\editors\config\keyhandler-commons.xml" />
+    <Content Include="mxgraph\examples\editors\config\keyhandler-minimal.xml" />
+    <Content Include="mxgraph\examples\editors\config\layouteditor.xml" />
+    <Content Include="mxgraph\examples\editors\config\processeditor.xml" />
+    <Content Include="mxgraph\examples\editors\config\wfeditor-commons.xml" />
+    <Content Include="mxgraph\examples\editors\config\wfgraph-commons.xml" />
+    <Content Include="mxgraph\examples\editors\config\wftoolbar-commons.xml" />
+    <Content Include="mxgraph\examples\editors\config\workfloweditor.xml" />
+    <Content Include="mxgraph\examples\editors\css\process.css" />
+    <Content Include="mxgraph\examples\editors\css\wordpress.css" />
+    <Content Include="mxgraph\examples\editors\diagrameditor.html" />
+    <Content Include="mxgraph\examples\editors\diagrams\empty.xml" />
+    <Content Include="mxgraph\examples\editors\diagrams\swimlanes.xml" />
+    <Content Include="mxgraph\examples\editors\diagrams\travel-booking.xml" />
+    <Content Include="mxgraph\examples\editors\diagrams\withdrawal.xml" />
+    <Content Include="mxgraph\examples\editors\grapheditor.html" />
+    <Content Include="mxgraph\examples\editors\help\index-all.html" />
+    <Content Include="mxgraph\examples\editors\help\index.html" />
+    <Content Include="mxgraph\examples\editors\images\actor.gif" />
+    <Content Include="mxgraph\examples\editors\images\alignbottom.gif" />
+    <Content Include="mxgraph\examples\editors\images\aligncenter.gif" />
+    <Content Include="mxgraph\examples\editors\images\alignleft.gif" />
+    <Content Include="mxgraph\examples\editors\images\alignmiddle.gif" />
+    <Content Include="mxgraph\examples\editors\images\alignright.gif" />
+    <Content Include="mxgraph\examples\editors\images\aligntop.gif" />
+    <Content Include="mxgraph\examples\editors\images\arrow.gif" />
+    <Content Include="mxgraph\examples\editors\images\bell.png" />
+    <Content Include="mxgraph\examples\editors\images\bg.gif" />
+    <Content Include="mxgraph\examples\editors\images\block_end.gif" />
+    <Content Include="mxgraph\examples\editors\images\block_start.gif" />
+    <Content Include="mxgraph\examples\editors\images\bold.gif" />
+    <Content Include="mxgraph\examples\editors\images\bottom.gif" />
+    <Content Include="mxgraph\examples\editors\images\box.png" />
+    <Content Include="mxgraph\examples\editors\images\camera.gif" />
+    <Content Include="mxgraph\examples\editors\images\center.gif" />
+    <Content Include="mxgraph\examples\editors\images\classic_end.gif" />
+    <Content Include="mxgraph\examples\editors\images\classic_start.gif" />
+    <Content Include="mxgraph\examples\editors\images\cloud.gif" />
+    <Content Include="mxgraph\examples\editors\images\cmp-bg.gif" />
+    <Content Include="mxgraph\examples\editors\images\collapse.gif" />
+    <Content Include="mxgraph\examples\editors\images\connect.gif" />
+    <Content Include="mxgraph\examples\editors\images\connector.gif" />
+    <Content Include="mxgraph\examples\editors\images\console.gif" />
+    <Content Include="mxgraph\examples\editors\images\copy.gif" />
+    <Content Include="mxgraph\examples\editors\images\cube_green.png" />
+    <Content Include="mxgraph\examples\editors\images\cut.gif" />
+    <Content Include="mxgraph\examples\editors\images\cylinder.gif" />
+    <Content Include="mxgraph\examples\editors\images\delete.gif" />
+    <Content Include="mxgraph\examples\editors\images\diagram.gif" />
+    <Content Include="mxgraph\examples\editors\images\diamond_end.gif" />
+    <Content Include="mxgraph\examples\editors\images\diamond_start.gif" />
+    <Content Include="mxgraph\examples\editors\images\doubleellipse.gif" />
+    <Content Include="mxgraph\examples\editors\images\down.gif" />
+    <Content Include="mxgraph\examples\editors\images\draw\drawbg.jpg" />
+    <Content Include="mxgraph\examples\editors\images\draw\drawbgcolor.jpg" />
+    <Content Include="mxgraph\examples\editors\images\draw\drawfooter.jpg" />
+    <Content Include="mxgraph\examples\editors\images\draw\drawheader.jpg" />
+    <Content Include="mxgraph\examples\editors\images\draw\mxlogo.jpg" />
+    <Content Include="mxgraph\examples\editors\images\dude3.png" />
+    <Content Include="mxgraph\examples\editors\images\earth.png" />
+    <Content Include="mxgraph\examples\editors\images\ellipse.gif" />
+    <Content Include="mxgraph\examples\editors\images\entity.gif" />
+    <Content Include="mxgraph\examples\editors\images\expand.gif" />
+    <Content Include="mxgraph\examples\editors\images\fillcolor.gif" />
+    <Content Include="mxgraph\examples\editors\images\fit.gif" />
+    <Content Include="mxgraph\examples\editors\images\font.gif" />
+    <Content Include="mxgraph\examples\editors\images\fontcolor.gif" />
+    <Content Include="mxgraph\examples\editors\images\gear.gif" />
+    <Content Include="mxgraph\examples\editors\images\gear.png" />
+    <Content Include="mxgraph\examples\editors\images\grid.gif" />
+    <Content Include="mxgraph\examples\editors\images\group.gif" />
+    <Content Include="mxgraph\examples\editors\images\help.gif" />
+    <Content Include="mxgraph\examples\editors\images\hexagon.gif" />
+    <Content Include="mxgraph\examples\editors\images\hline.gif" />
+    <Content Include="mxgraph\examples\editors\images\house.gif" />
+    <Content Include="mxgraph\examples\editors\images\house.png" />
+    <Content Include="mxgraph\examples\editors\images\image.gif" />
+    <Content Include="mxgraph\examples\editors\images\italic.gif" />
+    <Content Include="mxgraph\examples\editors\images\left.gif" />
+    <Content Include="mxgraph\examples\editors\images\linecolor.gif" />
+    <Content Include="mxgraph\examples\editors\images\link.gif" />
+    <Content Include="mxgraph\examples\editors\images\loading.gif" />
+    <Content Include="mxgraph\examples\editors\images\middle.gif" />
+    <Content Include="mxgraph\examples\editors\images\new.gif" />
+    <Content Include="mxgraph\examples\editors\images\open.gif" />
+    <Content Include="mxgraph\examples\editors\images\open_end.gif" />
+    <Content Include="mxgraph\examples\editors\images\open_start.gif" />
+    <Content Include="mxgraph\examples\editors\images\outline.gif" />
+    <Content Include="mxgraph\examples\editors\images\oval_end.gif" />
+    <Content Include="mxgraph\examples\editors\images\oval_start.gif" />
+    <Content Include="mxgraph\examples\editors\images\overlays\check.png" />
+    <Content Include="mxgraph\examples\editors\images\overlays\error.png" />
+    <Content Include="mxgraph\examples\editors\images\overlays\flash.png" />
+    <Content Include="mxgraph\examples\editors\images\overlays\forbidden.png" />
+    <Content Include="mxgraph\examples\editors\images\overlays\help.png" />
+    <Content Include="mxgraph\examples\editors\images\overlays\house.png" />
+    <Content Include="mxgraph\examples\editors\images\overlays\information.png" />
+    <Content Include="mxgraph\examples\editors\images\overlays\lightbulb_on.png" />
+    <Content Include="mxgraph\examples\editors\images\overlays\pencil.png" />
+    <Content Include="mxgraph\examples\editors\images\overlays\printer.png" />
+    <Content Include="mxgraph\examples\editors\images\overlays\user3.png" />
+    <Content Include="mxgraph\examples\editors\images\overlays\users3.png" />
+    <Content Include="mxgraph\examples\editors\images\overlays\workplace.png" />
+    <Content Include="mxgraph\examples\editors\images\package.png" />
+    <Content Include="mxgraph\examples\editors\images\pan.gif" />
+    <Content Include="mxgraph\examples\editors\images\paste.gif" />
+    <Content Include="mxgraph\examples\editors\images\plain.gif" />
+    <Content Include="mxgraph\examples\editors\images\preferences.gif" />
+    <Content Include="mxgraph\examples\editors\images\press.gif" />
+    <Content Include="mxgraph\examples\editors\images\preview.gif" />
+    <Content Include="mxgraph\examples\editors\images\print.gif" />
+    <Content Include="mxgraph\examples\editors\images\printer.png" />
+    <Content Include="mxgraph\examples\editors\images\properties.gif" />
+    <Content Include="mxgraph\examples\editors\images\rectangle.gif" />
+    <Content Include="mxgraph\examples\editors\images\redo.gif" />
+    <Content Include="mxgraph\examples\editors\images\refresh.gif" />
+    <Content Include="mxgraph\examples\editors\images\rhombus.gif" />
+    <Content Include="mxgraph\examples\editors\images\right.gif" />
+    <Content Include="mxgraph\examples\editors\images\rounded.gif" />
+    <Content Include="mxgraph\examples\editors\images\save.gif" />
+    <Content Include="mxgraph\examples\editors\images\saveas.gif" />
+    <Content Include="mxgraph\examples\editors\images\script.gif" />
+    <Content Include="mxgraph\examples\editors\images\select.gif" />
+    <Content Include="mxgraph\examples\editors\images\server.png" />
+    <Content Include="mxgraph\examples\editors\images\straight.gif" />
+    <Content Include="mxgraph\examples\editors\images\swimlane.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\cancel_end.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\cancel_intermediate.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\error.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\event.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\event_end.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\event_intermediate.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\fork.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\inclusive.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\link.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\merge.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\message.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\message_end.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\message_intermediate.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\multiple.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\rule.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_cancel_end.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_cancel_intermediate.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_error.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_event.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_event_end.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_event_intermediate.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_fork.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_inclusive.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_link.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_merge.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_message.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_message_end.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_message_intermediate.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_multiple.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_rule.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_terminate.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\small_timer.gif" />
+    <Content Include="mxgraph\examples\editors\images\symbols\terminate.png" />
+    <Content Include="mxgraph\examples\editors\images\symbols\timer.png" />
+    <Content Include="mxgraph\examples\editors\images\tasks.gif" />
+    <Content Include="mxgraph\examples\editors\images\text.gif" />
+    <Content Include="mxgraph\examples\editors\images\toback.gif" />
+    <Content Include="mxgraph\examples\editors\images\tofront.gif" />
+    <Content Include="mxgraph\examples\editors\images\toolbar.gif" />
+    <Content Include="mxgraph\examples\editors\images\top.gif" />
+    <Content Include="mxgraph\examples\editors\images\tree.gif" />
+    <Content Include="mxgraph\examples\editors\images\triangle.gif" />
+    <Content Include="mxgraph\examples\editors\images\underline.gif" />
+    <Content Include="mxgraph\examples\editors\images\undo.gif" />
+    <Content Include="mxgraph\examples\editors\images\ungroup.gif" />
+    <Content Include="mxgraph\examples\editors\images\up.gif" />
+    <Content Include="mxgraph\examples\editors\images\vertical.gif" />
+    <Content Include="mxgraph\examples\editors\images\workplace.png" />
+    <Content Include="mxgraph\examples\editors\images\wrench.png" />
+    <Content Include="mxgraph\examples\editors\images\zoom.gif" />
+    <Content Include="mxgraph\examples\editors\images\zoomactual.gif" />
+    <Content Include="mxgraph\examples\editors\images\zoomin.gif" />
+    <Content Include="mxgraph\examples\editors\images\zoomout.gif" />
+    <Content Include="mxgraph\examples\editors\js\mxApplication.js" />
+    <Content Include="mxgraph\examples\editors\layouteditor.html" />
+    <Content Include="mxgraph\examples\editors\processeditor.html" />
+    <Content Include="mxgraph\examples\editors\workfloweditor.html" />
+    <Content Include="mxgraph\examples\events.html" />
+    <Content Include="mxgraph\examples\extjs.html" />
+    <Content Include="mxgraph\examples\fileio.html" />
+    <Content Include="mxgraph\examples\fileio.txt" />
+    <Content Include="mxgraph\examples\fileio.xml" />
+    <Content Include="mxgraph\examples\fixedicon.html" />
+    <Content Include="mxgraph\examples\fixedpoints.html" />
+    <Content Include="mxgraph\examples\grapheditor\java\src\com\mxgraph\examples\web\Constants.java" />
+    <Content Include="mxgraph\examples\grapheditor\java\src\com\mxgraph\examples\web\ExportServlet.java" />
+    <Content Include="mxgraph\examples\grapheditor\java\src\com\mxgraph\examples\web\GraphEditor.java" />
+    <Content Include="mxgraph\examples\grapheditor\java\src\com\mxgraph\examples\web\OpenServlet.java" />
+    <Content Include="mxgraph\examples\grapheditor\java\src\com\mxgraph\examples\web\SaveServlet.java" />
+    <Content Include="mxgraph\examples\grapheditor\www\images\checkmark.gif" />
+    <Content Include="mxgraph\examples\grapheditor\www\images\close.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\images\collapsed.gif" />
+    <Content Include="mxgraph\examples\grapheditor\www\images\connector.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\images\expanded.gif" />
+    <Content Include="mxgraph\examples\grapheditor\www\images\grid.gif" />
+    <Content Include="mxgraph\examples\grapheditor\www\images\logo.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\images\nocolor.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\images\tooltip.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\images\touch-connector.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\images\touch-handle.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\images\transparent.gif" />
+    <Content Include="mxgraph\examples\grapheditor\www\index.html" />
+    <Content Include="mxgraph\examples\grapheditor\www\jscolor\arrow.gif" />
+    <Content Include="mxgraph\examples\grapheditor\www\jscolor\cross.gif" />
+    <Content Include="mxgraph\examples\grapheditor\www\jscolor\hs.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\jscolor\hv.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\jscolor\jscolor.js" />
+    <Content Include="mxgraph\examples\grapheditor\www\js\Actions.js" />
+    <Content Include="mxgraph\examples\grapheditor\www\js\Dialogs.js" />
+    <Content Include="mxgraph\examples\grapheditor\www\js\Editor.js" />
+    <Content Include="mxgraph\examples\grapheditor\www\js\EditorUi.js" />
+    <Content Include="mxgraph\examples\grapheditor\www\js\Graph.js" />
+    <Content Include="mxgraph\examples\grapheditor\www\js\Menus.js" />
+    <Content Include="mxgraph\examples\grapheditor\www\js\Shapes.js" />
+    <Content Include="mxgraph\examples\grapheditor\www\js\Sidebar.js" />
+    <Content Include="mxgraph\examples\grapheditor\www\js\Toolbar.js" />
+    <Content Include="mxgraph\examples\grapheditor\www\open.html" />
+    <Content Include="mxgraph\examples\grapheditor\www\resources\help.html" />
+    <Content Include="mxgraph\examples\grapheditor\www\resources\help_de.html" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\arrows.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\aws\compute.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\aws\content_delivery.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\aws\database.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\aws\deployment_management.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\aws\groups.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\aws\messaging.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\aws\misc.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\aws\networking.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\aws\non_service_specific.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\aws\on_demand_workforce.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\aws\storage.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\basic.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\bpmn.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Credit_Card_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Database_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Doctor1_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Earth_globe_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Email_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Empty_Folder_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Firewall_02_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Full_Folder_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Gear_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Graph_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\iMac_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\iPad_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Laptop_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Lock_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\MacBook_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Monitor_Tower_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Piggy_Bank_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Pilot1_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Printer_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Router_Icon_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Safe_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Security1_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Server_Tower_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Shopping_Cart_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Software_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Soldier1_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Suit1_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Suit2_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Suit3_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Tech1_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Telesales1_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Virtual_Machine_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Virus_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Wireless_Router_N_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Worker1_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\clipart\Workstation_128x128.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\abstract.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\capacitors.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\diodes.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\electro-mechanical.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\iec417.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\iec_logic_gates.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\inductors.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\instruments.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\logic_gates.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\miscellaneous.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\mosfets1.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\mosfets2.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\opto-electronics.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\opto_electronics.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\op_amps.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\plc_ladder.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\power_semiconductors.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\radio.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\resistors.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\signal_sources.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\thermionic_devices.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\transistors.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\electrical\waveforms.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\flowchart.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\general.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\lean_mapping.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\mockup\advertising.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\mockup\calendars.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\mockup\carousel.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\mockup\charts_and_tables.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\mockup\controls.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\mockup\form_elements.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\mockup\menus_and_buttons.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\mockup\misc.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\mockup\tabs.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\pid\compressors.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\pid\heat_exchangers.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\pid\instruments.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\pid\pumps.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\pid\valves.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\pid\vessels.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\signs\animals.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\signs\food.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\signs\healthcare.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\signs\nature.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\signs\people.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\signs\safety.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\signs\science.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\signs\sports.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\signs\tech.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\signs\transportation.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\stencils\signs\travel.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\styles\default.xml" />
+    <Content Include="mxgraph\examples\grapheditor\www\styles\grapheditor-ie6.css" />
+    <Content Include="mxgraph\examples\grapheditor\www\styles\grapheditor.css" />
+    <Content Include="mxgraph\examples\grapheditor\www\styles\help.css" />
+    <Content Include="mxgraph\examples\grapheditor\www\styles\sprites.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\styles\thumb_horz.png" />
+    <Content Include="mxgraph\examples\grapheditor\www\styles\thumb_vertical.png" />
+    <Content Include="mxgraph\examples\graphlayout.html" />
+    <Content Include="mxgraph\examples\grid.html" />
+    <Content Include="mxgraph\examples\groups.html" />
+    <Content Include="mxgraph\examples\guides.html" />
+    <Content Include="mxgraph\examples\helloport.html" />
+    <Content Include="mxgraph\examples\helloworld.html" />
+    <Content Include="mxgraph\examples\hierarchicallayout.html" />
+    <Content Include="mxgraph\examples\hovericons.html" />
+    <Content Include="mxgraph\examples\ie9svg.html" />
+    <Content Include="mxgraph\examples\images.html" />
+    <Content Include="mxgraph\examples\images\add.png" />
+    <Content Include="mxgraph\examples\images\camera.png" />
+    <Content Include="mxgraph\examples\images\check.png" />
+    <Content Include="mxgraph\examples\images\close.png" />
+    <Content Include="mxgraph\examples\images\connector.gif" />
+    <Content Include="mxgraph\examples\images\copy.png" />
+    <Content Include="mxgraph\examples\images\cut.png" />
+    <Content Include="mxgraph\examples\images\delete2.png" />
+    <Content Include="mxgraph\examples\images\dot.gif" />
+    <Content Include="mxgraph\examples\images\export1.png" />
+    <Content Include="mxgraph\examples\images\fit_to_size.png" />
+    <Content Include="mxgraph\examples\images\gradient_background.jpg" />
+    <Content Include="mxgraph\examples\images\green-dot.gif" />
+    <Content Include="mxgraph\examples\images\group.png" />
+    <Content Include="mxgraph\examples\images\icons48\column.png" />
+    <Content Include="mxgraph\examples\images\icons48\earth.png" />
+    <Content Include="mxgraph\examples\images\icons48\gear.png" />
+    <Content Include="mxgraph\examples\images\icons48\keys.png" />
+    <Content Include="mxgraph\examples\images\icons48\mail_new.png" />
+    <Content Include="mxgraph\examples\images\icons48\server.png" />
+    <Content Include="mxgraph\examples\images\icons48\table.png" />
+    <Content Include="mxgraph\examples\images\key.png" />
+    <Content Include="mxgraph\examples\images\loading.gif" />
+    <Content Include="mxgraph\examples\images\navigate_minus.png" />
+    <Content Include="mxgraph\examples\images\navigate_plus.png" />
+    <Content Include="mxgraph\examples\images\paste.png" />
+    <Content Include="mxgraph\examples\images\plus.png" />
+    <Content Include="mxgraph\examples\images\press32.png" />
+    <Content Include="mxgraph\examples\images\print32.png" />
+    <Content Include="mxgraph\examples\images\printer.png" />
+    <Content Include="mxgraph\examples\images\redo.png" />
+    <Content Include="mxgraph\examples\images\sidebar_bg.gif" />
+    <Content Include="mxgraph\examples\images\spacer.gif" />
+    <Content Include="mxgraph\examples\images\toolbar_bg.gif" />
+    <Content Include="mxgraph\examples\images\undo.png" />
+    <Content Include="mxgraph\examples\images\view_1_1.png" />
+    <Content Include="mxgraph\examples\images\view_1_132.png" />
+    <Content Include="mxgraph\examples\images\view_next.png" />
+    <Content Include="mxgraph\examples\images\view_previous.png" />
+    <Content Include="mxgraph\examples\images\wires-grid.gif" />
+    <Content Include="mxgraph\examples\images\zoom_in.png" />
+    <Content Include="mxgraph\examples\images\zoom_in32.png" />
+    <Content Include="mxgraph\examples\images\zoom_out.png" />
+    <Content Include="mxgraph\examples\images\zoom_out32.png" />
+    <Content Include="mxgraph\examples\indicators.html" />
+    <Content Include="mxgraph\examples\labelposition.html" />
+    <Content Include="mxgraph\examples\labels.html" />
+    <Content Include="mxgraph\examples\layers.html" />
+    <Content Include="mxgraph\examples\markers.html" />
+    <Content Include="mxgraph\examples\menustyle.html" />
+    <Content Include="mxgraph\examples\merge.html" />
+    <Content Include="mxgraph\examples\monitor.html" />
+    <Content Include="mxgraph\examples\offpage.html" />
+    <Content Include="mxgraph\examples\orgchart.html" />
+    <Content Include="mxgraph\examples\orthogonal.html" />
+    <Content Include="mxgraph\examples\overlays.html" />
+    <Content Include="mxgraph\examples\pagebreaks.html" />
+    <Content Include="mxgraph\examples\perimeter.html" />
+    <Content Include="mxgraph\examples\permissions.html" />
+    <Content Include="mxgraph\examples\portrefs.html" />
+    <Content Include="mxgraph\examples\ports.html" />
+    <Content Include="mxgraph\examples\schema.html" />
+    <Content Include="mxgraph\examples\scrollbars.html" />
+    <Content Include="mxgraph\examples\secondlabel.html" />
+    <Content Include="mxgraph\examples\serverview.html" />
+    <Content Include="mxgraph\examples\shape.html" />
+    <Content Include="mxgraph\examples\standardsmode.html" />
+    <Content Include="mxgraph\examples\stencils.html" />
+    <Content Include="mxgraph\examples\stencils.xml" />
+    <Content Include="mxgraph\examples\stylesheet.html" />
+    <Content Include="mxgraph\examples\swimlanes.html" />
+    <Content Include="mxgraph\examples\template.html" />
+    <Content Include="mxgraph\examples\thread.html" />
+    <Content Include="mxgraph\examples\toolbar.html" />
+    <Content Include="mxgraph\examples\tree.html" />
+    <Content Include="mxgraph\examples\uiconfig.html" />
+    <Content Include="mxgraph\examples\uiconfig.xml" />
+    <Content Include="mxgraph\examples\userobject.html" />
+    <Content Include="mxgraph\examples\validation.html" />
+    <Content Include="mxgraph\examples\windows.html" />
+    <Content Include="mxgraph\examples\wires.html" />
+    <Content Include="mxgraph\examples\wrapping.html" />
+    <Content Include="mxgraph\index.html" />
+    <Content Include="mxgraph\src\css\common.css" />
+    <Content Include="mxgraph\src\css\explorer.css" />
+    <Content Include="mxgraph\src\images\button.gif" />
+    <Content Include="mxgraph\src\images\close.gif" />
+    <Content Include="mxgraph\src\images\collapsed.gif" />
+    <Content Include="mxgraph\src\images\error.gif" />
+    <Content Include="mxgraph\src\images\expanded.gif" />
+    <Content Include="mxgraph\src\images\maximize.gif" />
+    <Content Include="mxgraph\src\images\minimize.gif" />
+    <Content Include="mxgraph\src\images\normalize.gif" />
+    <Content Include="mxgraph\src\images\point.gif" />
+    <Content Include="mxgraph\src\images\resize.gif" />
+    <Content Include="mxgraph\src\images\separator.gif" />
+    <Content Include="mxgraph\src\images\submenu.gif" />
+    <Content Include="mxgraph\src\images\transparent.gif" />
+    <Content Include="mxgraph\src\images\warning.gif" />
+    <Content Include="mxgraph\src\images\warning.png" />
+    <Content Include="mxgraph\src\images\window-title.gif" />
+    <Content Include="mxgraph\src\images\window.gif" />
+    <Content Include="mxgraph\src\js\mxClient.js" />
+    <Content Include="resources\basic-style.xml" />
+    <Content Include="resources\default-style.xml" />
+    <Content Include="SvgDemo.htm" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="workflow.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExtDemo.aspx.cs">
+      <DependentUpon>ExtDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExtDemo.aspx.designer.cs">
+      <DependentUpon>ExtDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="helloport.aspx.cs">
+      <DependentUpon>helloport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="helloport.aspx.designer.cs">
+      <DependentUpon>helloport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mxgraphDemo.aspx.cs">
+      <DependentUpon>mxgraphDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mxgraphDemo.aspx.designer.cs">
+      <DependentUpon>mxgraphDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mxgraph\devel\source.zip" />
+    <None Include="mxgraph\examples\editors\resources\mxApplication.properties" />
+    <None Include="mxgraph\examples\editors\resources\mxApplication_de.properties" />
+    <None Include="mxgraph\examples\editors\resources\mxApplication_zh.properties" />
+    <None Include="mxgraph\examples\grapheditor\README" />
+    <None Include="mxgraph\examples\grapheditor\www\resources\grapheditor.properties" />
+    <None Include="mxgraph\examples\grapheditor\www\resources\grapheditor_de.properties" />
+    <None Include="mxgraph\src\resources\editor.properties" />
+    <None Include="mxgraph\src\resources\editor_de.properties" />
+    <None Include="mxgraph\src\resources\graph.properties" />
+    <None Include="mxgraph\src\resources\graph_de.properties" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2942</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

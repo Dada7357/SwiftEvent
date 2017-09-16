@@ -1,0 +1,173 @@
+<mxEditor defaultGroup="group" defaultEdge="connector"> 
+	<add as="onInit"><![CDATA[
+		function (isFirstTime)
+		{
+			onInit(this, isFirstTime);
+		}
+	]]></add>  
+	
+	<Array as="templates">
+		<add as="group">
+			<Group label="" href="">
+				<mxCell vertex="1" style="group" connectable="0"/>
+			</Group>
+		</add>
+		<add as="connector">
+			<Connector label="" href="">
+				<mxCell style="straight">
+					<mxGeometry as="geometry" relative="1"/>
+				</mxCell>
+			</Connector>
+		</add>
+		<add as="container">
+			<Container label="容器" href="">
+				<mxCell vertex="1" style="swimlane" connectable="0">
+					<mxGeometry as="geometry" width="200" height="200"/>
+				</mxCell>
+			</Container>
+		</add>
+		<add as="rectangle">
+			<Rect label="矩形" href="">
+				<mxCell vertex="1">	
+					<mxGeometry as="geometry" width="80" height="40"/>
+				</mxCell>
+			</Rect>
+		</add>
+		<add as="text">
+			<Text label="文本" href="">
+				<mxCell vertex="1" style="text">	
+					<mxGeometry as="geometry" width="80" height="20"/>
+				</mxCell>
+			</Text>
+		</add>
+		<add as="image">
+			<Image label="" href="">
+				<mxCell vertex="1" style="image">	
+					<mxGeometry as="geometry" width="80" height="50"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="rounded">
+			<Roundrect label="圆角矩形" href="">
+				<mxCell vertex="1" style="rounded">		
+					<mxGeometry as="geometry" width="80" height="40"/>
+				</mxCell>
+			</Roundrect>
+		</add>
+		<add as="ellipse">
+			<Shape label="椭圆" href="">
+				<mxCell vertex="1" style="ellipse">		
+					<mxGeometry as="geometry" width="60" height="60"/>
+				</mxCell>
+			</Shape>
+		</add>
+		
+		<add as="cylinder">
+			<Shape label="圆柱" href="">
+				<mxCell vertex="1" style="cylinder">		
+					<mxGeometry as="geometry" width="60" height="60"/>
+				</mxCell>
+			</Shape>
+		</add>
+		<add as="doubleellipse">
+			<Shape label="双椭圆" href="">
+				<mxCell vertex="1" style="ellipse;shape=doubleEllipse">		
+					<mxGeometry as="geometry" width="60" height="60"/>
+				</mxCell>
+			</Shape>
+		</add>
+		<add as="triangle">
+			<Shape label="三角形" href="">
+				<mxCell vertex="1" style="triangle">		
+					<mxGeometry as="geometry" width="60" height="60"/>
+				</mxCell>
+			</Shape>
+		</add>
+		<add as="rhombus">
+			<Shape label="菱形" href="">
+				<mxCell vertex="1" style="rhombus">		
+					<mxGeometry as="geometry" width="60" height="60"/>
+				</mxCell>
+			</Shape>
+		</add>
+		<add as="hexagon">
+			<Shape label="六边形" href="">
+				<mxCell vertex="1" style="hexagon">		
+					<mxGeometry as="geometry" width="60" height="60"/>
+				</mxCell>
+			</Shape>
+		</add> 
+		
+		<add as="actor">
+			<Shape label="角色" href="">
+				<mxCell vertex="1" style="actor">		
+					<mxGeometry as="geometry" width="40" height="60"/>
+				</mxCell>
+			</Shape>
+		</add>
+		<add as="cloud">
+			<Shape label="对话" href="">
+				<mxCell vertex="1" style="cloud">		
+					<mxGeometry as="geometry" width="80" height="60"/>
+				</mxCell>
+			</Shape>
+		</add>
+		<add as="hline">
+			<Shape label="" href="">
+				<mxCell vertex="1" style="ellipse">		
+					<mxGeometry as="geometry" width="60" height="10"/>
+				</mxCell>
+			</Shape>
+		</add>
+	</Array>
+	<mxGraph as="graph" alternateEdgeStyle="verticalConnector" allowLoops="1" dropEnabled="1">
+		<add as="isAutoSizeCell"><![CDATA[
+			function(cell)
+			{
+				return mxUtils.isNode(this.model.getValue(cell), 'text');
+			}
+		]]></add>
+		<add as="isSwimlane"><![CDATA[
+			function (cell)
+			{
+				return mxUtils.isNode(this.model.getValue(cell), 'container');
+			}
+		]]></add> 
+		<add as="convertValueToString"><![CDATA[
+			function(cell)
+			{
+				return cell.getAttribute('label');
+			}
+		]]></add>
+ 
+		<mxGraphModel as="model">
+			<add as="valueForCellChanged"><![CDATA[
+				function(cell, value)
+				{
+					var previous = null;
+					
+					if (isNaN(value.nodeType))
+					{
+						previous = cell.getAttribute('label');
+						cell.setAttribute('label', value);
+					}
+					else
+					{
+						previous = cell.value;
+						cell.value = value;
+					}
+					
+					return previous;
+				}
+			]]></add>
+			<root>
+				<Diagram label="My Diagram" href="http://www.mxgraph.com/" id="0">
+					<mxCell/>
+				</Diagram>
+				<Layer label="Default Layer" id="1">
+					<mxCell parent="0"/>
+				</Layer>
+			</root>
+		</mxGraphModel>
+	</mxGraph>   
+</mxEditor>

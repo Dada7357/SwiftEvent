@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>  
+  <title>SVG Animation - Circle Translation</title>
+  <!--  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/> Remove this comment only if you have issues rendering this page on an intranet site. -->
+  <style>
+    /* CSS here. */
+  </style>  
+  <script>
+      var timer; // Contains the setInterval() object, used to stop the animation.
+      var delay = 10; // Invoke the function specified in setInterval() every "delay" milliseconds. This value affects animation smoothness.
+
+      /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+      function s2d(s)
+      /* 
+      The function name "s2d" means "speed to displacement". This function returns the required 
+      displacement value for an object traveling at "s" pixels per second. This function assumes the following:
+      
+      * The parameter s is in pixels per second.
+      * "constants.delay" is a valid global constant.
+      * The SVG viewport is set up such that 1 user unit equals 1 pixel.      
+      */
+      {
+          return (s / 1000) * delay; // Given "constants.delay", return the object's displacement such that it will travel at s pixels per second across the screen.
+      }
+
+      /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+      function init() {
+          svgElement = document.getElementById("svgElement"); // Required for Mozilla, this line is not necessary IE9 or Chrome.    
+          circle0 = document.getElementById("circle0"); // Required for Mozilla, this line is not necessaryIE9 or Chrome.
+
+          timer = setInterval(doAnim, delay); // Call the doAnim() function every "delay" milliseconds until "timer" is cleared.
+
+          /* Create custom properties to store the circle's velocity: */
+          circle0.vx = 150; // Move the circle at a velocity of 50 pixels per second in the x-direction.
+          circle0.vy = 60; // Move the circle at a velocity of 20 pixels per second in the y-direction.
+      }
+
+      /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+      function doAnim() {
+          var r = circle0.r.baseVal.value; // The radius of circle0.
+          var boxWidth = svgElement.width.baseVal.value; // The width of the SVG viewport.
+          var boxHeight = svgElement.height.baseVal.value; // The height of the SVG viewport.
+
+          circle0.cx.baseVal.value += s2d(circle0.vx); // Move the circle in the x-direction by a small amount.
+          circle0.cy.baseVal.value += s2d(circle0.vy); // Move the circle in the y-direction by a small amount.
+
+          /* Assumes the circle's velocity is such that it will only hit the right wall: */
+          if (circle0.cx.baseVal.value >= (boxWidth - r)) // Detect if the circle attempts to exit the right side of the SVG viewport.
+              circle0.vx *= -1; // Reverse the direction of the x-component of the ball's velocity vector - this is a right-wall bounce.
+
+          if (circle0.cy.baseVal.value >= (boxHeight - r))
+              clearInterval(timer); // The circle has hit the bottom wall so instruct the browser to stop calling doAnim().
+      }
+  </script>  
+</head>
+
+<body onload="init();">
+  <svg id="svgElement" width="800px" height="600px" viewBox="0 0 800 600">
+    <rect x="0" y="0" width="100%" height="100%" rx="10" ry="10" style="fill: white; stroke: black;" />
+    <circle id="circle0" cx="40" cy="40" r="40" style="fill: orange; stroke: black; stroke-width: 1;" />
+  </svg>
+</body>
+
+</html>

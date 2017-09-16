@@ -1,0 +1,10 @@
+C:\Users\dada\Desktop\SvgWeb\mxgraph\bin\Debug\mxgraph.dll
+C:\Users\dada\Desktop\SvgWeb\mxgraph\bin\Debug\mxgraph.pdb
+C:\Users\dada\Desktop\SvgWeb\mxgraph\obj\Debug\mxgraph.dll
+C:\Users\dada\Desktop\SvgWeb\mxgraph\obj\Debug\mxgraph.pdb
+C:\Users\dada\Desktop\SvgWeb\mxgraph\obj\Debug\mxgraph.csprojResolveAssemblyReference.cache
+D:\programs\SvgWeb\mxgraph\bin\Debug\mxgraph.dll
+D:\programs\SvgWeb\mxgraph\bin\Debug\mxgraph.pdb
+D:\programs\SvgWeb\mxgraph\obj\Debug\mxgraph.csprojResolveAssemblyReference.cache
+D:\programs\SvgWeb\mxgraph\obj\Debug\mxgraph.dll
+D:\programs\SvgWeb\mxgraph\obj\Debug\mxgraph.pdb

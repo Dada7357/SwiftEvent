@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvgWeb", "SvgWeb\SvgWeb.csproj", "{3AE1B8F3-60E8-4CB2-A5CF-DE931E75BA56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mxgraph", "mxgraph\mxgraph.csproj", "{80E3A3FD-A368-4833-89A5-3C0552A1B8F9}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AE1B8F3-60E8-4CB2-A5CF-DE931E75BA56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AE1B8F3-60E8-4CB2-A5CF-DE931E75BA56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AE1B8F3-60E8-4CB2-A5CF-DE931E75BA56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AE1B8F3-60E8-4CB2-A5CF-DE931E75BA56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80E3A3FD-A368-4833-89A5-3C0552A1B8F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E3A3FD-A368-4833-89A5-3C0552A1B8F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E3A3FD-A368-4833-89A5-3C0552A1B8F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80E3A3FD-A368-4833-89A5-3C0552A1B8F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

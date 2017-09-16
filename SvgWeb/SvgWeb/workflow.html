@@ -1,0 +1,87 @@
+﻿<html>
+ <head>
+<title>流程配置</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="UTF-8" />
+<style>
+#load{
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:10000;
+	padding:10px;
+	background:white;
+	font-size:12px;
+}
+</style>
+<div id="load"><img src="images/loader.gif" width="16" height="16" alt="" />&nbsp;正在初始化,请稍候...</div> 
+<link rel="stylesheet" type="text/css" href="css/workfow.css" /> 
+<link rel="stylesheet" type="text/css" href="../resources/css/ext-all.css" /> 
+
+<!-- LIBS -->
+<script type="text/javascript" src="../adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="../ext-all.js"></script>
+<script type="text/javascript" src="../examples/locale/ext-lang-zh_CN.js"></script>
+<script language="JavaScript">Ext.BLANK_IMAGE_URL = '../resources/images/default/s.gif'</script> 
+<script type="text/javascript" src="js/workflow.js"></script>
+<script type="text/javascript" src="js/layout_old.js"></script>
+
+	<script type="text/javascript">
+	 
+		function onInit(editor, isFirstTime)
+		{ 
+			mxConnectionHandler.prototype.connectImage = new mxImage('images/connector.gif', 16, 16); 
+			editor.graph.setConnectable(true); 
+			editor.graph.connectionHandler.setCreateTarget(true); 
+			editor.addListener(mxEvent.SESSION, function(editor, evt)
+			{
+				var session = evt.getArgAt(0); 
+				if (session.connected)
+				{
+					var tstamp = new Date().toLocaleString();
+					editor.setStatus(tstamp+':'+' '+session.sent+' bytes sent, '+' '+session.received+' bytes received');
+				}
+				else
+				{
+					editor.setStatus('Not connected');
+				}
+			});  
+		    // Changes the zoom on mouseWheel events
+		    mxEvent.addMouseWheelListener(function (evt, up)
+		    {
+			    if (!mxEvent.isConsumed(evt))
+			    {
+			    	if (up)
+					{
+			    		editor.execute('zoomIn');
+					}
+					else
+					{
+						editor.execute('zoomOut');
+					}
+					
+					mxEvent.consume(evt);
+			    }
+		    }); 
+		}
+	</script> 
+	
+<script type="text/javascript">window.onload = function(){ 
+	main();
+	Ext.get("load").dom.style.display = "none";
+};
+</script>
+
+
+</head>
+<body >
+
+<div id="header"><div style="float:right;margin:5px;" class="x-small-editor"></div></div>
+ 
+<textarea style="display:none" id="data">
+
+<mxGraphModel>  <root>    <Diagram label="My Diagram" href="http://www.mxgraph.com/" id="0">      <mxCell/>    </Diagram>    <Layer label="Default Layer" id="1">      <mxCell parent="0"/>    </Layer>    <Shape label="开始" href="5" id="5">      <mxCell style="ellipse;fillColor=#00FF00;shadow=1" parent="1" vertex="1">        <mxGeometry x="80" y="140" width="40" height="40" as="geometry"/>      </mxCell>    </Shape>    <Shape label="结束" href="" id="6">      <mxCell style="ellipse;fillColor=#FF0000;shadow=1" parent="1" vertex="1">        <mxGeometry x="710" y="140" width="40" height="40" as="geometry"/>      </mxCell>    </Shape>    <Rect label="流程1" href="9" id="9">      <mxCell style="fillColor=#CCFFFF;gradientDirection=south;dashed=1;shadow=1" parent="1" vertex="1">        <mxGeometry x="190" y="140" width="80" height="40" as="geometry"/>      </mxCell>    </Rect>    <Rect label="流程2" href="" id="10">      <mxCell style="fillColor=#CCFFFF;gradientDirection=south;dashed=1;shadow=1" parent="1" vertex="1">        <mxGeometry x="320" y="140" width="80" height="40" as="geometry"/>      </mxCell>    </Rect>    <mxCell id="11" value="" style="noEdgeStyle=1;shadow=1" parent="1" source="9" target="10" edge="1">      <mxGeometry relative="1" as="geometry"/>    </mxCell>    <Rect label="流程3" href="" id="12">      <mxCell style="fillColor=#CCFFFF;gradientDirection=south;dashed=1;shadow=1" parent="1" vertex="1">        <mxGeometry x="450" y="140" width="80" height="40" as="geometry"/>      </mxCell>    </Rect>    <mxCell id="13" value="" style="noEdgeStyle=1;shadow=1" parent="1" source="10" target="12" edge="1">      <mxGeometry relative="1" as="geometry"/>    </mxCell>    <Rect label="流程4" href="" id="14">      <mxCell style="fillColor=#CCFFFF;gradientDirection=south;dashed=1;shadow=1" parent="1" vertex="1">        <mxGeometry x="580" y="140" width="80" height="40" as="geometry"/>      </mxCell>    </Rect>    <mxCell id="15" value="" style="noEdgeStyle=1;shadow=1" parent="1" source="12" target="14" edge="1">      <mxGeometry relative="1" as="geometry"/>    </mxCell>    <mxCell id="16" value="" style="noEdgeStyle=1;shadow=1;dashed=1" parent="1" source="14" target="6" edge="1">      <mxGeometry relative="1" as="geometry"/>    </mxCell>    <mxCell id="17" value="" style="noEdgeStyle=1;shadow=1;dashed=1" parent="1" source="5" target="9" edge="1">      <mxGeometry relative="1" as="geometry"/>    </mxCell>    <Container label="说明" href="" id="19">      <mxCell style="swimlane" vertex="1" connectable="0" parent="1">        <mxGeometry x="190" y="240" width="470" height="80" as="geometry"/>      </mxCell>    </Container>    <Text label="这是一个流程图例子" href="" id="20">      <mxCell style="text;rounded=1;verticalAlign=middle;align=center" vertex="1" parent="19">        <mxGeometry y="20" width="470" height="60" as="geometry"/>      </mxCell>    </Text>  </root></mxGraphModel>
+
+</textarea>
+</body>
+</html>
